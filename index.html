@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOOD THEORY — Underground by Nature</title>
+<style>
+:root{--bg:#070809;--panel:#0d0f12;--line:#272b31;--text:#f1f1ee;--muted:#969aa1;--accent:#d9d9d4}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;letter-spacing:.03em}
+a{color:inherit;text-decoration:none}.wrap{width:min(1180px,92%);margin:auto}
+nav{height:78px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(7,8,9,.95);backdrop-filter:blur(12px);z-index:10}
+.logo{font-weight:900;font-size:20px;line-height:.8;letter-spacing:.15em}.logo span{display:block}.cross{font-size:15px;color:#aaa}
+.navlinks{display:flex;gap:34px;font-size:12px;color:var(--muted)}.navlinks a:hover{color:white}.ig{font-size:12px;border:1px solid var(--line);padding:10px 14px}
+.hero{min-height:620px;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.hero-copy{padding:105px 6vw 70px 0;display:flex;flex-direction:column;justify-content:center}.eyebrow{font-size:11px;letter-spacing:.35em;color:var(--muted)}
+h1{font-size:clamp(58px,10vw,128px);line-height:.82;margin:22px 0 28px;letter-spacing:.01em}.tagline{font-size:15px;line-height:1.8;letter-spacing:.28em;color:#c7c8c8}
+.rule{width:95px;border-top:1px solid #aaa;margin:30px 0}.founded{font-size:13px;letter-spacing:.3em}
+.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid #aaa;padding:15px 21px;margin-top:30px;width:max-content;font-size:12px;letter-spacing:.1em;transition:.2s}.button:hover{background:#eee;color:#111}
+.hero-art{position:relative;min-height:500px;overflow:hidden;background:radial-gradient(circle at 50% 30%,#25282c 0,#121417 35%,#08090a 72%);border-left:1px solid var(--line)}
+.hero-art:after{content:"HOOD THEORY";position:absolute;bottom:16%;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:clamp(28px,4vw,58px);font-weight:bold;color:#c4c4c4;opacity:.17;letter-spacing:.1em}
+.figure{position:absolute;width:54%;height:76%;bottom:0;left:23%;background:linear-gradient(100deg,#090a0b,#25272b 50%,#0b0c0d);border-radius:46% 46% 8% 8%;box-shadow:0 0 80px #000}
+.hood{position:absolute;width:48%;height:30%;left:26%;top:-5%;border-radius:50% 50% 35% 35%;background:#0c0d0f;border:1px solid #333}
+section{padding:72px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px;border-bottom:1px solid var(--line);padding-bottom:18px}h2{margin:0;font-size:28px;letter-spacing:.1em}.sub{color:var(--muted);font-size:11px;letter-spacing:.14em;margin-top:9px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);min-width:0}.product-img{width:100%;aspect-ratio:1/1.08;object-fit:cover;background:#15171a;display:block}.card-body{padding:16px}.product-name{font-weight:bold;font-size:13px}.price-row{display:flex;justify-content:space-between;gap:8px;align-items:center;margin:20px 0 13px;font-size:12px}.stock{font-size:10px;border:1px solid #4c5158;padding:6px 8px;color:#aaa;white-space:nowrap}.stock.low{color:#f0c05a;border-color:#806522}.stock.critical{color:#ff7777;border-color:#7c3030}.stock.good{color:#a6d3a6;border-color:#405c40}
+.sizes{display:flex;gap:6px;flex-wrap:wrap}.size{border:1px solid var(--line);padding:7px 9px;font-size:10px;color:#bbb}.size.sold{opacity:.35;text-decoration:line-through}
+.center{text-align:center}.order{margin:24px auto 0}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line)}.info{padding:38px;border-right:1px solid var(--line)}.info:last-child{border:0}.steps{margin:22px 0 0;padding:0;list-style:none}.steps li{display:flex;gap:15px;margin:15px 0;color:#c4c6ca;font-size:13px;line-height:1.5}.num{border:1px solid #777;border-radius:50%;min-width:26px;height:26px;display:grid;place-items:center;font-size:11px}
+.notice{border:1px solid var(--line);padding:15px;font-size:12px;color:var(--muted);margin-top:24px}
+.admin{border:1px solid var(--line);background:#0a0c0e;padding:25px}.admin-top{display:flex;justify-content:space-between;align-items:center;gap:15px}.admin-actions{display:flex;gap:10px}.mini-btn,button{background:transparent;color:var(--text);border:1px solid #4b5057;padding:10px 13px;cursor:pointer;font-size:11px;letter-spacing:.08em}.mini-btn:hover,button:hover{background:#eee;color:#111}
+.manager{display:none;margin-top:25px;grid-template-columns:300px 1fr;gap:22px}.manager.open{display:grid}.form{border:1px solid var(--line);padding:18px}.form label{display:block;font-size:10px;color:var(--muted);margin:13px 0 6px}.form input,.form select{width:100%;padding:12px;background:#111317;color:white;border:1px solid #30343a}.sizes-input{display:grid;grid-template-columns:1fr 1fr;gap:8px}.inventory{overflow:auto;border:1px solid var(--line)}table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);white-space:nowrap}th{color:var(--muted);font-size:10px}.thumb{width:40px;height:45px;object-fit:cover;background:#222}.danger{color:#ff8989}
+.empty{grid-column:1/-1;border:1px dashed var(--line);padding:55px;text-align:center;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr}.hero-copy{padding:70px 0}.hero-art{min-height:400px;border-left:0;border-top:1px solid var(--line)}.products{grid-template-columns:repeat(2,1fr)}.manager.open{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.info{border-right:0;border-bottom:1px solid var(--line)}}
+@media(max-width:500px){.products{grid-template-columns:1fr}.ig{padding:8px;font-size:10px}section{padding:52px 0}.hero-copy{padding-top:55px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:min(1180px,92%)">
+<a href="#" class="logo"><span>HO<span class="cross">⊕</span>D</span><span>THEORY</span></a>
+<div class="navlinks"><a href="#home">HOME</a><a href="#shop">SHOP</a><a href="#about">ABOUT</a></div>
+<a class="ig" href="https://www.instagram.com/hoodtheorytm/" target="_blank" rel="noopener">◎ @hoodtheorytm</a>
+</div></nav>
+
+<main>
+<div class="wrap hero" id="home">
+<div class="hero-copy">
+<div class="eyebrow">EST. UNDERGROUND</div><h1>HO<span style="letter-spacing:-.08em">⊕</span>D<br>THEORY</h1>
+<div class="tagline">UNDERGROUND BY NATURE.<br>BUILT DIFFERENT.</div><div class="rule"></div>
+<div class="founded">FOUNDED BY L.L.L.S.</div>
+<a class="button" href="https://www.instagram.com/hoodtheorytm/" target="_blank" rel="noopener">◎ DM @HOODTHEORYTM</a>
+</div>
+<div class="hero-art"><div class="figure"><div class="hood"></div></div></div>
+</div>
+
+<section id="shop"><div class="wrap">
+<div class="section-head"><div><h2>SHOP</h2><div class="sub">ALL PIECES. LIMITED STOCK.</div></div><div class="sub" id="productCount"></div></div>
+<div class="products" id="products"></div>
+<div class="center"><a class="button order" href="https://www.instagram.com/hoodtheorytm/" target="_blank" rel="noopener">◎ DM US ON INSTAGRAM TO ORDER</a></div>
+</div></section>
+
+<section id="about"><div class="wrap info-grid">
+<div class="info"><h2 style="font-size:22px">HOW TO ORDER</h2>
+<ol class="steps"><li><span class="num">1</span><span>Browse the collection and check which sizes are available.</span></li><li><span class="num">2</span><span>Take a screenshot of the item you want.</span></li><li><span class="num">3</span><span>DM us on Instagram <b>@hoodtheorytm</b> with your order.</span></li><li><span class="num">4</span><span>We will confirm the item, size, price and delivery details.</span></li><li><span class="num">5</span><span>Complete the order through Instagram.</span></li></ol>
+<div class="notice"><b>IMPORTANT:</b> There is no direct checkout on this website. All orders are arranged through Instagram.</div></div>
+<div class="info center"><h2 style="font-size:22px">ABOUT HOOD THEORY</h2><p style="max-width:390px;margin:28px auto;color:#b5b7ba;line-height:1.8;font-size:13px">Hood Theory is more than just clothing. It's a mindset. Built for those who move in silence and let their actions speak.</p><div class="rule" style="margin:28px auto"></div><div class="sub">FOUNDED BY</div><h2 style="font-size:34px;margin-top:12px">L.L.L.S.</h2><div style="font-size:30px;color:#777;margin-top:20px">⊕</div></div>
+</div></section>
+
+<section><div class="wrap admin">
+<div class="admin-top"><div><h2 style="font-size:20px">INVENTORY MANAGEMENT</h2><div class="sub">ADD, EDIT AND MANAGE YOUR PRODUCTS AND STOCK.</div></div><div class="admin-actions"><button onclick="toggleManager()">MANAGE INVENTORY</button><button class="mini-btn" onclick="exportData()">BACKUP</button></div></div>
+<div class="manager" id="manager">
+<form class="form" id="productForm">
+<h3 style="margin-top:0;font-size:14px">ADD / EDIT ITEM</h3>
+<label>CLOTHING IMAGE</label><input id="image" type="file" accept="image/*">
+<label>ITEM NAME</label><input id="name" required placeholder="e.g. SHADOW HOODIE">
+<label>CATEGORY</label><select id="category"><option>Hoodies</option><option>T-Shirts</option><option>Pants</option><option>Accessories</option><option>Other</option></select>
+<label>PRICE (RS)</label><input id="price" type="number" min="0" required placeholder="2199">
+<label>STOCK FOR EACH SIZE</label>
+<div class="sizes-input"><input id="stockS" type="number" min="0" value="0" placeholder="S"><input id="stockM" type="number" min="0" value="0" placeholder="M"><input id="stockL" type="number" min="0" value="0" placeholder="L"><input id="stockXL" type="number" min="0" value="0" placeholder="XL"></div>
+<button type="submit" style="width:100%;margin-top:18px">SAVE ITEM</button><button type="button" onclick="resetForm()" style="width:100%;margin-top:8px">CLEAR</button>
+</form>
+<div class="inventory"><table><thead><tr><th>IMAGE</th><th>NAME</th><th>CATEGORY</th><th>PRICE</th><th>STOCK</th><th>ACTION</th></tr></thead><tbody id="inventoryBody"></tbody></table></div>
+</div></div></div></section>
+</main>
+<footer><div class="wrap footer-row"><div>© <span id="year"></span> HOOD THEORY</div><div>LIMITED STOCK. ONCE IT'S GONE, IT'S GONE.</div><a href="https://www.instagram.com/hoodtheorytm/" target="_blank" rel="noopener">@hoodtheorytm</a></div></footer>
+
+<script>
+const KEY='hoodTheoryInventoryV1';
+const placeholder=(name)=>`data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" width="600" height="700"><rect width="100%" height="100%" fill="#15171a"/><text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" fill="#777" font-family="Arial" font-size="30">${name}</text><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="#555" font-family="Arial" font-size="14">IMAGE COMING SOON</text></svg>`)}`;
+const starter=[
+{id:1,name:'THOUGHTS HOODIE',category:'Hoodies',price:2199,stock:{S:1,M:2,L:0,XL:0},image:placeholder('THOUGHTS HOODIE')},
+{id:2,name:'CORE TEE',category:'T-Shirts',price:1299,stock:{S:4,M:5,L:3,XL:1},image:placeholder('CORE TEE')},
+{id:3,name:'MINIMAL HOODIE',category:'Hoodies',price:2199,stock:{S:0,M:1,L:1,XL:0},image:placeholder('MINIMAL HOODIE')},
+{id:4,name:'UNDERGROUND PANTS',category:'Pants',price:1799,stock:{S:0,M:0,L:0,XL:0},image:placeholder('UNDERGROUND PANTS')}
+];
+let products=JSON.parse(localStorage.getItem(KEY)||'null')||starter, editing=null;
+const total=p=>Object.values(p.stock).reduce((a,b)=>a+(+b||0),0);
+function save(){localStorage.setItem(KEY,JSON.stringify(products))}
+function stockLabel(n){if(n===0)return ['OUT OF STOCK','']; if(n<=2)return [`ONLY ${n} LEFT`,'critical']; if(n<=5)return ['LOW STOCK','low']; return [`IN STOCK: ${n}`,'good']}
+function render(){
+const box=document.getElementById('products'),body=document.getElementById('inventoryBody');
+document.getElementById('productCount').textContent=`${products.length} PIECE${products.length===1?'':'S'}`;
+box.innerHTML=products.length?'':`<div class="empty">NO ITEMS ADDED YET. OPEN INVENTORY MANAGEMENT TO ADD YOUR FIRST PIECE.</div>`;
+body.innerHTML='';
+products.forEach(p=>{let n=total(p),[label,cls]=stockLabel(n);
+box.innerHTML+=`<article class="card"><img class="product-img" src="${p.image}" alt="${esc(p.name)}"><div class="card-body"><div class="product-name">${esc(p.name)}</div><div class="sub">${esc(p.category)}</div><div class="price-row"><span>Rs ${Number(p.price).toLocaleString()}</span><span class="stock ${cls}">${label}</span></div><div class="sizes">${Object.entries(p.stock).map(([s,q])=>`<span class="size ${+q===0?'sold':''}">${s} ${+q===0?'':'('+q+')'}</span>`).join('')}</div></div></article>`;
+body.innerHTML+=`<tr><td><img class="thumb" src="${p.image}" alt=""></td><td>${esc(p.name)}</td><td>${esc(p.category)}</td><td>Rs ${Number(p.price).toLocaleString()}</td><td>${n}</td><td><button class="mini-btn" onclick="editItem(${p.id})">EDIT</button> <button class="mini-btn danger" onclick="deleteItem(${p.id})">DELETE</button></td></tr>`;
+}); save();
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toggleManager(){document.getElementById('manager').classList.toggle('open')}
+document.getElementById('productForm').addEventListener('submit',e=>{
+e.preventDefault(); const file=document.getElementById('image').files[0];
+const build=(image)=>{const item={id:editing||Date.now(),name:document.getElementById('name').value.trim().toUpperCase(),category:document.getElementById('category').value,price:+document.getElementById('price').value,stock:{S:+stockS.value||0,M:+stockM.value||0,L:+stockL.value||0,XL:+stockXL.value||0},image:image|| (editing?products.find(p=>p.id===editing).image:placeholder(document.getElementById('name').value))}; if(editing)products=products.map(p=>p.id===editing?item:p);else products.unshift(item); resetForm();render()}
+if(file){const r=new FileReader();r.onload=()=>build(r.result);r.readAsDataURL(file)}else build(null);
+});
+function editItem(id){const p=products.find(x=>x.id===id);editing=id;name.value=p.name;category.value=p.category;price.value=p.price;stockS.value=p.stock.S||0;stockM.value=p.stock.M||0;stockL.value=p.stock.L||0;stockXL.value=p.stock.XL||0;document.getElementById('manager').classList.add('open');window.scrollTo({top:document.querySelector('.admin').offsetTop-80,behavior:'smooth'})}
+function deleteItem(id){if(confirm('Delete this item?')){products=products.filter(p=>p.id!==id);render()}}
+function resetForm(){editing=null;document.getElementById('productForm').reset();stockS.value=0;stockM.value=0;stockL.value=0;stockXL.value=0}
+function exportData(){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(products,null,2)],{type:'application/json'}));a.download='hood-theory-inventory-backup.json';a.click()}
+document.getElementById('year').textContent=new Date().getFullYear();render();
+</script>
+</body></html>
